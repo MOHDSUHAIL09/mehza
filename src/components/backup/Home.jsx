@@ -28,7 +28,7 @@ import IntImg from '../assets/interactive-panel.png'
 import { BsFillDpadFill } from 'react-icons/bs';
 import { GiVendingMachine } from 'react-icons/gi';
 import { ImDisplay } from 'react-icons/im';
-import product from '../assets/product-img/d1c8a88c-5f65-44d3-9385-3874e25f50b0.png'
+
 // import heroVending from '../assets/product-img/slider-2.jpeg'
 
 
@@ -87,30 +87,30 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      title: <>Where <span style={{ color: '#00C6FF' }}>Technology</span> Meets <span style={{ color: '#8E2DE2' }}><br/> Empathy.</span></>,
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
+      title: <>Where <span style={{ color: '#00C6FF' }}>Technology</span> Meets <span style={{ color: '#8E2DE2' }}>Empathy.</span></>,
+      desc: "We bridge the gap between collaborative learning and essential well-being to build truly inclusive environments.",
       // image: "/logo2.png",
     },
     {
       id: 2,
-      title: <>Transforming  <span style={{ color: '#00C6FF' }}>Education </span><br /> & <span style={{ color: '#8E2DE2' }}> Hygiene.</span></>,
+      title: <>Smart <span style={{ color: '#00C6FF' }}>IoT</span> Solutions for <span style={{ color: '#8E2DE2' }}>Hygiene.</span></>,
+      desc: "Revolutionizing facility management with automated sanitary napkin vending machines and real-time monitoring.",
       // image: "/assets/slider/slider-2.jpeg",
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
     },
     {
       id: 3,
-      title: <>Smart <span style={{ color: '#00C6FF' }}>IoT</span> Solutions <br /> for <span style={{ color: '#8E2DE2' }}>Hygiene.</span></>,
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
+      title: <>Smart <span style={{ color: '#00C6FF' }}>IoT</span> Solutions for <span style={{ color: '#8E2DE2' }}>Hygiene.</span></>,
+      desc: "Revolutionizing facility management with automated sanitary napkin vending machines and real-time monitoring.",
       // image: "/assets/slider/slider-2.jpeg",
     },
     {
       id: 4,
-      title: <>Smart Learning<span style={{ color: '#00C6FF' }}>Safe</span> Solutions<br /> for <span style={{ color: '#8E2DE2' }}>Future.</span></>,
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
+      title: <>Smart <span style={{ color: '#00C6FF' }}>IoT</span> Solutions for <span style={{ color: '#8E2DE2' }}>Hygiene.</span></>,
+      desc: "Revolutionizing facility management with automated sanitary napkin vending machines and real-time monitoring.",
       // image: "/assets/slider/slider-2.jpeg",
     }
   ];
-  
+
 
   // Products list for icon section
   const productsList = [
@@ -120,7 +120,7 @@ const Home = () => {
     { id: 2, name: "Studio Setup", icon: <MdOutlineHeadset size={45} /> },
     { id: 3, name: "Accessories", icon: <MdOutlineOndemandVideo size={45} /> },
     { id: 4, name: "Unified Communication", icon: <MdOutlineVideoCall size={45} /> },
-
+    
   ];
   const [current, setCurrent] = useState(0);
   const [activeProduct, setActiveProduct] = useState(0);
@@ -145,135 +145,202 @@ const Home = () => {
       />
 
 
+      {/* ── Old Hero SECTION ───────────────────────────────────────── */}
+      {/* <section className="h-[100dvh]  w-full bg-[#0A0F1C] relative overflow-hidden flex items-center justify-center">
+      
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={slides[current].id}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
+        >
+          <img 
+            src={slides[current].image} 
+            className="w-full h-full object-cover" 
+            alt="Hero Background" 
+          />
+          <div className="absolute inset-0 bg-[#0A0F1C]/70 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-transparent to-[#0A0F1C]/40"></div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="container mx-auto px-6 md:px-[10%] relative z-10">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
+          >
+            <motion.h1 
+              className="font-headline font-black leading-[1.05] tracking-tighter text-white text-[10vw] sm:text-6xl md:text-[5vw] mb-6"
+            >
+              {slides[current].title}
+            </motion.h1>
+
+            <motion.p 
+              className="text-gray-400 font-medium max-w-2xl leading-relaxed text-base md:text-xl mb-10 text-balance"
+            >
+              {slides[current].desc}
+            </motion.p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <Link to="/solutions" className="px-8 py-4 rounded-full text-white font-bold text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg">
+                Explore Solutions
+              </Link>
+              <Link to="/contact" className="px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-sm tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md">
+                Contact Us
+              </Link>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="absolute bottom-12 md:bottom-auto md:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-4 z-40">
+        <button 
+          onClick={prevSlide}
+          className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md shadow-xl"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button 
+          onClick={nextSlide}
+          className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md shadow-xl"
+        >
+          <ChevronRight size={24} />
+        </button>
+      </div>
+
+      <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-4 z-40">
+        {slides.map((_, i) => (
+          <div 
+            key={i} 
+            onClick={() => setCurrent(i)}
+            className={`w-1 transition-all duration-700 rounded-full cursor-pointer ${current === i ? 'h-12 bg-[#00C6FF]' : 'h-4 bg-white/20'}`}
+          />
+        ))}
+      </div>
+
+        <div className="peer absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 w-[140px] md:w-[200px] h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+          <span className="text-[8px] md:text-[10px] font-bold text-slate-500 tracking-widest uppercase mb-0.5 md:mb-1 transition-transform duration-500 group-hover:-translate-y-1">Scroll</span>
+          <span className="material-symbols-outlined text-[#0072FF] text-[16px] md:text-[22px] transition-transform duration-500 group-hover:translate-y-1">arrow_downward</span>
+        </div>
+
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none origin-bottom transition-transform duration-500 md:peer-hover:scale-y-[1.15]">
+          
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[80px]">
+            <path d="M 0,0 C 100,100 300,105 400,105 C 450,105 500,40 600,40 C 700,40 750,105 800,105 C 900,105 1100,100 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
+          </svg>
+       
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[120px]">
+            <path d="M 0,5 C 200,120 400,110 500,110 C 550,110 550,40 600,40 C 650,40 650,110 700,110 C 800,110 1000,120 1200,5 L 1200,120 L 0,120 Z" fill="#ffffff" />
+          </svg>
+        </div>
+    </section>  */}
 
       {/* ──New HERO SECTION ───────────────────────────────────────── */}
-<section className="relative w-full overflow-hidden flex items-center justify-center mt-2" style={{ height: '100dvh' }}>
-  {/* Static Background Image - No animation */}
-  <div className="absolute inset-0 z-0">
-    {/* Desktop Image - hidden on mobile */}
-    <img
-      src="/assets/slider/slider-2.png"
-      className="w-full h-full object-cover hidden md:block"
-      alt="Hero Background Desktop"
-    />
-    {/* Mobile Image - hidden on desktop */}
-    <img
-      src="/assets/slider/slider-3.png"
-      className="w-full h-full object-cover block md:hidden"
-      alt="Hero Background Mobile"
-    />
-  </div>
-
-  {/* Optional: Dark overlay for better text readability */}
-  <div className="absolute inset-0 z-[1] bg-black/30 md:bg-black/20"></div>
-
-  {/* Content container - full height flex column */}
-  <div className="relative z-10 w-full h-full flex flex-col justify-center">
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={current}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 0.8 }}
-        className="home-text w-full text-left pl-4 md:pl-8 lg:pl-12 mb-5"
-      >
-        {/* Mobile font size fixed */}
-        <motion.h1
-          className="font-headline font-black leading-[1.2] tracking-tighter text-white mb-4 md:mb-6"
-          style={{
-            fontSize: 'clamp(28px, 8vw, 5vw)',
-          }}
-        >
-          {slides[current].title}
-        </motion.h1>
-
-        {/* Mobile description font size fixed */}
-        <motion.p
-          className="font-medium max-w-2xl leading-relaxed mb-8 md:mb-10"
-          style={{
-            color: "#ffffff",
-            fontSize: 'clamp(14px, 4vw, 20px)',
-            opacity: 0.95
-          }}
-        >
-          {slides[current].desc}
-        </motion.p>
-
-        {/* Mobile buttons responsive - left aligned */}
-        <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4">
-          <Link
-            to="/solutions"
-            className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-white font-bold text-xs sm:text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg"
-          >
-            Explore Solutions
-          </Link>
-          <Link
-            to="/contact"
-            className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full border-2 border-white/20 text-white font-bold text-xs sm:text-sm tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md"
-          >
-            Contact Us
-          </Link>
+      <section className="h-[100dvh] w-full relative overflow-hidden flex items-center justify-center mt-2">
+        {/* Static Background Image - No animation */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/slider/slider-2.png"
+            className="w-full h-full object-cover"
+            alt="Hero Background"
+          />
         </div>
-      </motion.div>
-    </AnimatePresence>
-  </div>
 
-  {/* Navigation Buttons - Mobile friendly */}
-  <div className="absolute bottom-20 md:bottom-auto md:right-6 lg:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-3 md:gap-4 z-40">
-    <button
-      onClick={prevSlide}
-      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
-    >
-      <ChevronLeft size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
-    </button>
-    <button
-      onClick={nextSlide}
-      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
-    >
-      <ChevronRight size={20} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
-    </button>
-  </div>
+        <div className="container mx-auto px-6 md:px-[10%] relative z-10">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-4xl"
+            >
+              <motion.h1
+                className="font-headline font-black leading-[1.05] tracking-tighter text-white text-[10vw] sm:text-6xl md:text-[5vw] mb-6"
+              >
+                {slides[current].title}
+              </motion.h1>
 
-  {/* Dots Indicator - Mobile hide, show on tablet+ */}
-  <div className="absolute left-3 md:left-6 lg:left-12 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-3 md:gap-4 z-40">
-    {slides.map((_, i) => (
-      <div
-        key={i}
-        onClick={() => setCurrent(i)}
-        className={`transition-all duration-700 rounded-full cursor-pointer ${current === i
-            ? 'h-8 md:h-12 w-1 bg-[#00C6FF]'
-            : 'h-3 md:h-4 w-1 bg-white/30'
-          }`}
-      />
-    ))}
-  </div>
+              <motion.p
+                className="text-gray-400 font-medium max-w-2xl leading-relaxed text-base md:text-xl mb-10 text-balance " style={{ color: "#ffffff" }}
+              >
+                {slides[current].desc}
+              </motion.p>
 
-  {/* Scroll Indicator - Mobile smaller */}
-  <div
-    className="peer absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 w-[100px] sm:w-[140px] md:w-[200px] h-[50px] sm:h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
-    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-  >
-    <span className="text-[8px] sm:text-[10px] md:text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-0.5 transition-transform duration-500 group-hover:-translate-y-1">
-      Scroll
-    </span>
-    <span className="material-symbols-outlined text-[#0072FF] text-sm sm:text-base md:text-[22px] transition-transform duration-500 group-hover:translate-y-1">
-      arrow_downward
-    </span>
-  </div>
+              <div className="flex flex-wrap items-center gap-4">
+                <Link to="/solutions" className="px-8 py-4 rounded-full text-white font-bold text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg">
+                  Explore Solutions
+                </Link>
+                <Link to="/contact" className="px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-sm tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md">
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-  {/* Bottom Curve - Mobile smaller height */}
-  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none origin-bottom transition-transform duration-500 md:peer-hover:scale-y-[1.15]">
-    {/* Mobile version - smaller curve */}
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[40px] sm:h-[60px]">
-      <path d="M 0,0 C 200,80 400,90 600,90 C 800,90 1000,80 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
-    </svg>
-    {/* Desktop version */}
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[80px] lg:h-[120px]">
-      <path d="M 0,5 C 200,120 400,110 500,110 C 550,110 550,40 600,40 C 650,40 650,110 700,110 C 800,110 1000,120 1200,5 L 1200,120 L 0,120 Z" fill="#ffffff" />
-    </svg>
-  </div>
-</section>
+        {/* Navigation Buttons */}
+        <div className="absolute bottom-12 md:bottom-auto md:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-4 z-40">
+          <button
+            onClick={prevSlide}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md shadow-xl"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md shadow-xl"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-4 z-40">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-1 transition-all duration-700 rounded-full cursor-pointer ${current === i ? 'h-12 bg-[#00C6FF]' : 'h-4 bg-white/20'}`}
+            />
+          ))}
+        </div>
+
+        {/* Scroll Indicator */}
+        <div
+          className="peer absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 w-[140px] md:w-[200px] h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <span className="text-[8px] md:text-[10px] font-bold text-slate-500 tracking-widest uppercase mb-0.5 md:mb-1 transition-transform duration-500 group-hover:-translate-y-1">
+            Scroll
+          </span>
+          <span className="material-symbols-outlined text-[#0072FF] text-[16px] md:text-[22px] transition-transform duration-500 group-hover:translate-y-1">
+            arrow_downward
+          </span>
+        </div>
+
+        {/* Bottom Curve */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none origin-bottom transition-transform duration-500 md:peer-hover:scale-y-[1.15]">
+          {/* Mobile version */}
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[80px]">
+            <path d="M 0,0 C 100,100 300,105 400,105 C 450,105 500,40 600,40 C 700,40 750,105 800,105 C 900,105 1100,100 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
+          </svg>
+          {/* Desktop version */}
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[120px]">
+            <path d="M 0,5 C 200,120 400,110 500,110 C 550,110 550,40 600,40 C 650,40 650,110 700,110 C 800,110 1000,120 1200,5 L 1200,120 L 0,120 Z" fill="#ffffff" />
+          </svg>
+        </div>
+      </section>
 
       {/* Our products */}
       <section style={{ paddingBottom: '3rem' }}>
@@ -775,9 +842,320 @@ const Home = () => {
     }
   `}</style>
       </section>
-
+      
       {/* ── MASSIVE CONTINUOUS BACKGROUND WRAPPER ────────────────────── */}
+      {/* bg-[#0A0F1C] */}
       <div className="w-full relative overflow-hidden ">
+
+        {/* ── SOLUTIONS & TRUST WRAPPER ────────────────── */}
+        {/* <section className="pt-[12vh] pb-[6vh] md:pb-[12vh] relative bg-transparent">
+          
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6A11CB]/5 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-[20%] left-[-10%] w-[500px] h-[500px] bg-[#0072FF]/10 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="w-[90%] max-w-screen-2xl mx-auto relative z-10">
+        
+            <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-10 lg:gap-24 mb-16 md:mb-14 lg:mb-28">
+              <AnimatedSection direction="up" className="lg:w-1/2" disabled={isMobile}>
+                <div className="max-w-xl">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#00C6FF] mb-4 block">What We Do</span>
+                  <h2 className="font-black font-headline text-slate-600 dark:text-white tracking-tighter mb-5 leading-[1.1]" style={{ fontSize: 'clamp(1.8rem, 4vw, 3.5rem)' }}>
+                    We design <span className="relative inline-block">
+                      Connected
+                      <svg className="absolute -bottom-1.5 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="trustGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#00C6FF" />
+                            <stop offset="50%" stopColor="#0072FF" />
+                            <stop offset="100%" stopColor="#6A11CB" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M0,4 Q50,0 100,4 T200,4" stroke="url(#trustGrad)" strokeWidth="3.5" fill="none" />
+                      </svg>
+                    </span> Solutions for Modern Spaces.
+                  </h2>
+                  <p className="text-gray-400 font-medium leading-relaxed" style={{ fontSize: 'clamp(0.95rem, 1.3vw, 1.2rem)' }}>
+                    Mehza SmartTech is a pioneer in IoT-driven hygiene infrastructure. We specialize in automated sanitary vending machines and intelligent facility monitoring systems that empower organizations to provide essential amenities with absolute reliability and zero logistical friction.
+                  </p>
+                </div>
+              </AnimatedSection>
+
+              <div className="w-full lg:w-1/2 relative flex items-start lg:items-center justify-center lg:justify-end min-h-0 md:min-h-[420px] lg:h-[70vh] mt-2 md:mt-0">
+                
+                <div className="relative flex items-start lg:items-center justify-center lg:justify-end w-full h-auto md:h-full z-10 pointer-events-none -translate-x-2 md:translate-x-0 lg:translate-x-[10%]">
+                  <m.div
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 20, y: -10 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="relative w-[48%] lg:w-[55%] z-20"
+                  >
+                    <img
+                      src="/assets/mehza-smartboard.png"
+                      alt="Mehza Smartboard"
+                      className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
+                    />
+                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-[#00C6FF]/20 blur-2xl rounded-full" />
+
+                  </m.div>
+
+                  <m.div
+                    initial={{ opacity: 0, x: 100, y: isMobile ? 12 : 0 }}
+                    whileInView={{ opacity: 1, x: isMobile ? 5 : 0, y: isMobile ? 12 : 0 }}
+                    transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+                    className="relative w-[35%] lg:w-[42%] z-10 -ml-[12%] lg:-ml-[15%]"
+                  >
+                    <img
+                      src="/assets/sanitary-vending-mehza.png"
+                      alt="Mehza Sanitary Vending Machine"
+                      className="w-full h-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)]"
+                    />
+                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[90%] h-6 bg-[#8E2DE2]/20 blur-2xl rounded-full" />
+                  </m.div>
+                </div>
+
+                
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[120%] bg-radial-gradient from-[#00C6FF]/5 to-transparent blur-3xl pointer-events-none" />
+              </div>
+            </div>
+
+          
+            <AnimatedSection direction="up" className="mt-12 md:mt-0 mb-16" disabled={isMobile}>
+              <h2
+                className="font-black font-headline text-slate-600 dark:text-white mb-6 tracking-tighter"
+                style={{ fontSize: 'clamp(1.8rem, 4vw, 3.75rem)' }}
+              >
+                Why <span className="relative inline-block">Trust<svg className="absolute bottom-1 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M0,4 Q50,0 100,4 T200,4" stroke="url(#trustGrad)" strokeWidth="4.5" fill="none" opacity="0.9" /></svg></span> Mehza
+              </h2>
+              <p
+                className="text-gray-400 font-medium max-w-2xl leading-relaxed"
+                style={{ fontSize: 'clamp(0.95rem, 1.3vw, 1.3rem)' }}
+              >
+                We bridge the gap between necessary amenities and facility management through intelligent, connected infrastructure.
+              </p>
+            </AnimatedSection>
+
+            <div className="flex flex-col">
+
+             
+              <AnimatedSection direction="left" delay={0.1} className="w-full md:w-[65%] mr-auto relative z-10" disabled={isMobile}>
+                <div
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                  }}
+                  className="premium-card group hover:-translate-y-2 border-[#0072FF]/20 hover:border-[#0072FF]/50"
+                >
+                  <div className="premium-card-border" />
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-[#0072FF]/10 flex items-center justify-center border border-[#0072FF]/20 group-hover:scale-110 transition-transform duration-500">
+                      <span className="material-symbols-outlined text-[#0072FF]" style={{ fontVariationSettings: "'FILL' 1" }}>network_node</span>
+                    </div>
+                    <h3 className="text-xl lg:text-2xl font-black font-headline text-slate-800 dark:text-white mb-3 uppercase tracking-tight">Tech That Works for You</h3>
+                    <p className=" text-gray-500 dark:text-gray-400 font-medium text-base lg:text-lg leading-relaxed">Smart, reliable tools designed to make your day-to-day smoother and get you ready for tomorrow.</p>
+                  </div>
+
+                 
+                  <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[#0072FF]/10 rounded-full blur-[40px] group-hover:bg-[#0072FF]/30 transition-all duration-700" />
+                  <div className="absolute right-8 bottom-8 w-px h-16 bg-gradient-to-t from-[#0072FF]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:h-24" />
+                  <div className="absolute right-8 bottom-8 w-16 h-px bg-gradient-to-l from-[#0072FF]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:w-24" />
+                </div>
+              </AnimatedSection>
+
+             
+              <div className="block md:hidden w-full h-16 relative z-0 flex justify-center">
+                <svg width="40" height="100%" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <m.path
+                    d="M 20,0 L 20,50"
+                    stroke="#6B7280"
+                    strokeWidth="2"
+                    strokeDasharray="6 4"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                  />
+                  <m.path
+                    d="M 12,42 L 20,55 L 28,42"
+                    stroke="#6B7280"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8, duration: 0.3 }}
+                  />
+                </svg>
+              </div>
+
+              <div className="hidden md:block w-full h-60 -my-[100px] relative z-0">
+                <svg width="100%" height="100%" viewBox="0 0 1000 240" preserveAspectRatio="none" style={{ overflow: 'visible' }} xmlns="http://www.w3.org/2000/svg">
+                  <mask id="drawMask1">
+                    <m.path d="M 650,80 C 880,80 930,-80 800,-80 C 650,-80 800,100 800,135" stroke="white" strokeWidth="10" fill="none" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 1.5, ease: "easeInOut" }} />
+                  </mask>
+                  <path mask="url(#drawMask1)" d="M 650,80 C 880,80 930,-80 800,-80 C 650,-80 800,100 800,135" stroke="#6B7280" strokeWidth="3" strokeDasharray="18 12" strokeLinecap="round" fill="none" style={{ vectorEffect: 'non-scaling-stroke' }} />
+                  <m.polygon points="800,140 790,125 810,125" fill="#6B7280" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.2, delay: 1.5 }} />
+                </svg>
+              </div>
+
+             
+              <AnimatedSection direction="right" delay={0.2} className="w-full md:w-[65%] ml-auto relative z-10" disabled={isMobile}>
+                <div
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                  }}
+                  className="premium-card group hover:-translate-y-2 border-[#8E2DE2]/20 hover:border-[#8E2DE2]/50"
+                >
+                  <div className="premium-card-border" />
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-[#8E2DE2]/10 flex items-center justify-center border border-[#8E2DE2]/20 group-hover:scale-110 transition-transform duration-500">
+                      <span className="material-symbols-outlined text-[#8E2DE2]" style={{ fontVariationSettings: "'FILL' 1" }}>construction</span>
+                    </div>
+                    <h3 className="text-xl lg:text-2xl font-black font-headline text-slate-800 dark:text-white mb-3 uppercase tracking-tight">Zero-Friction Installation</h3>
+                    <p className="text-gray-500 dark:text-gray-400 font-medium text-base lg:text-lg leading-relaxed">No headaches, no downtime. Our systems are designed to plug right in and get to work without interrupting your day.</p>
+                  </div>
+
+                 
+                  <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[#8E2DE2]/10 rounded-full blur-[40px] group-hover:bg-[#8E2DE2]/30 transition-all duration-700" />
+                  <div className="absolute right-8 bottom-8 w-px h-16 bg-gradient-to-t from-[#8E2DE2]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:h-24" />
+                  <div className="absolute right-8 bottom-8 w-16 h-px bg-gradient-to-l from-[#8E2DE2]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:w-24" />
+                </div>
+              </AnimatedSection>
+
+             
+              <div className="block md:hidden w-full h-16 relative z-0 flex justify-center">
+                <svg width="40" height="100%" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <m.path
+                    d="M 20,0 L 20,50"
+                    stroke="#6B7280"
+                    strokeWidth="2"
+                    strokeDasharray="6 4"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                  />
+                  <m.path
+                    d="M 12,42 L 20,55 L 28,42"
+                    stroke="#6B7280"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8, duration: 0.3 }}
+                  />
+                </svg>
+              </div>
+
+             
+              <div className="hidden md:block w-full h-60 -my-[100px] relative z-0">
+                <svg width="100%" height="100%" viewBox="0 0 1000 240" preserveAspectRatio="none" style={{ overflow: 'visible' }} xmlns="http://www.w3.org/2000/svg">
+                  <mask id="drawMask2">
+                    <m.path d="M 350,80 C 120,80 70,-80 200,-80 C 350,-80 200,100 200,135" stroke="white" strokeWidth="10" fill="none" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 1.5, ease: "easeInOut" }} />
+                  </mask>
+                  <path mask="url(#drawMask2)" d="M 350,80 C 120,80 70,-80 200,-80 C 350,-80 200,100 200,135" stroke="#6B7280" strokeWidth="3" strokeDasharray="18 12" strokeLinecap="round" fill="none" style={{ vectorEffect: 'non-scaling-stroke' }} />
+                  <m.polygon points="200,140 210,125 190,125" fill="#6B7280" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.2, delay: 1.5 }} />
+                </svg>
+              </div>
+
+              
+              <AnimatedSection direction="left" delay={0.3} className="w-full md:w-[65%] mr-auto relative z-10" disabled={isMobile}>
+                <div
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                  }}
+                  className="premium-card group hover:-translate-y-2 border-[#00C6FF]/20 hover:border-[#00C6FF]/50"
+                >
+                  <div className="premium-card-border" />
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-[#00C6FF]/10 flex items-center justify-center border border-[#00C6FF]/20 group-hover:scale-110 transition-transform duration-500">
+                      <span className="material-symbols-outlined text-[#00C6FF]" style={{ fontVariationSettings: "'FILL' 1" }}>savings</span>
+                    </div>
+                    <h3 className="text-xl lg:text-2xl font-black font-headline text-slate-800 dark:text-white mb-3 uppercase tracking-tight">Affordable Solutions</h3>
+                    <p className="text-gray-500 dark:text-gray-400 font-medium text-base lg:text-lg leading-relaxed">Great quality shouldn't break the bank. We keep prices fair so you get premium tools that actually pay off in the long run.</p>
+                  </div>
+
+                  
+                  <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[#00C6FF]/10 rounded-full blur-[40px] group-hover:bg-[#00C6FF]/30 transition-all duration-700" />
+                  <div className="absolute right-8 bottom-8 w-px h-16 bg-gradient-to-t from-[#00C6FF]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:h-24" />
+                  <div className="absolute right-8 bottom-8 w-16 h-px bg-gradient-to-l from-[#00C6FF]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:w-24" />
+                </div>
+              </AnimatedSection>
+
+              
+              <div className="block md:hidden w-full h-16 relative z-0 flex justify-center">
+                <svg width="40" height="100%" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <m.path
+                    d="M 20,0 L 20,50"
+                    stroke="#6B7280"
+                    strokeWidth="2"
+                    strokeDasharray="6 4"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                  />
+                  <m.path
+                    d="M 12,42 L 20,55 L 28,42"
+                    stroke="#6B7280"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.8, duration: 0.3 }}
+                  />
+                </svg>
+              </div>
+
+             
+              <div className="hidden md:block w-full h-60 -my-[100px] relative z-0">
+                <svg width="100%" height="100%" viewBox="0 0 1000 240" preserveAspectRatio="none" style={{ overflow: 'visible' }} xmlns="http://www.w3.org/2000/svg">
+                  <mask id="drawMask3">
+                    <m.path d="M 650,80 C 880,80 930,-80 800,-80 C 650,-80 800,100 800,135" stroke="white" strokeWidth="10" fill="none" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 1.5, ease: "easeInOut" }} />
+                  </mask>
+                  <path mask="url(#drawMask3)" d="M 650,80 C 880,80 930,-80 800,-80 C 650,-80 800,100 800,135" stroke="#6B7280" strokeWidth="3" strokeDasharray="18 12" strokeLinecap="round" fill="none" style={{ vectorEffect: 'non-scaling-stroke' }} />
+                  <m.polygon points="800,140 790,125 810,125" fill="#6B7280" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.2, delay: 1.5 }} />
+                </svg>
+              </div>
+
+             
+              <AnimatedSection direction="right" delay={0.4} className="w-full md:w-[65%] ml-auto relative z-10" disabled={isMobile}>
+                <div
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                    e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+                  }}
+                  className="premium-card group hover:-translate-y-2 border-[#6A11CB]/20 hover:border-[#6A11CB]/50"
+                >
+                  <div className="premium-card-border" />
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 mb-4 rounded-xl bg-[#6A11CB]/10 flex items-center justify-center border border-[#6A11CB]/20 group-hover:scale-110 transition-transform duration-500">
+                      <span className="material-symbols-outlined text-[#6A11CB]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                    </div>
+                    <h3 className="text-xl lg:text-2xl font-black font-headline text-slate-800 dark:text-white mb-3 uppercase tracking-tight">Trusted by Institutions</h3>
+                    <p className="text-gray-500 dark:text-gray-400 font-medium text-base lg:text-lg leading-relaxed">More than just a vendor, we’re a partner you can rely on. We pride ourselves on being there whenever you need us.</p>
+                  </div>
+
+                  
+                  <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-[#6A11CB]/10 rounded-full blur-[40px] group-hover:bg-[#6A11CB]/30 transition-all duration-700" />
+                  <div className="absolute right-8 bottom-8 w-px h-16 bg-gradient-to-t from-[#6A11CB]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:h-24" />
+                  <div className="absolute right-8 bottom-8 w-16 h-px bg-gradient-to-l from-[#6A11CB]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:w-24" />
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section> */}
+
 
         {/* Interactive Flat Panel Display */}
         <section className="relative min-h-screen md:min-h-[100svh] flex items-center justify-center pt-20 md:pt-[1vh] z-10 px-4 md:px-8">
@@ -984,113 +1362,8 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Accessories */}
-        <section className="relative min-h-screen md:min-h-[100svh] flex items-center justify-center pt-20 md:pt-[1vh] z-10 px-4 md:px-8">
-          <div className="container mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center z-10">
-            <AnimatedSection direction="right" className="relative mt-8 md:mt-0">
-              <div className="relative group">
-                <div className="absolute -inset-10 bg-tech-gradient opacity-10 blur-[60px] md:blur-[100px] group-hover:opacity-20 transition-opacity duration-1000"></div>
-                {/* 🔴 Image same rakhi hai */}
-                <img
-                  src={product}
-                  alt="Product Image"
-                  className="relative z-10 w-full h-auto max-w-[300px] md:max-w-none mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-float"
-                />
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="left" className="lg:text-left">
-              {/* ✅ Ye "Accessories" kar diya */}
-              <span className="text-tech-gradient font-bold tracking-[0.1em] uppercase text-[0px] md:text-sm mb-4 block">
-                Accessories
-              </span>
-
-              {/* Main Heading - Accessories */}
-              <h1 className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] font-black tracking-tighter mb-4 md:mb-6 text-slate-900 dark:text-white transition-colors duration-500">
-                Premium <span className="animated-gradient-text">Tech Accessories</span>
-              </h1>
-
-              {/* ✅ Ab saare accessories ke features honge - Camera, Headphone, Mobile, Tablet, Game */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 md:mb-10 max-w-3xl">
-
-                {/* Camera Section */}
-                <div className="col-span-1 sm:col-span-2 mb-1">
-                  <div className="flex items-center gap-2 text-[#00C6FF] font-semibold text-sm uppercase tracking-wider">
-                    <span>📷 CAMERA ACCESSORIES</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>4K Ultra HD Webcam with Auto-Focus & Noise Cancellation Mic</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>Tripod Stand, Ring Light, Lens Kit (Wide/Angle/Macro)</span>
-                </div>
-
-                {/* Headphone Section */}
-                <div className="col-span-1 sm:col-span-2 mb-1 mt-2">
-                  <div className="flex items-center gap-2 text-[#00C6FF] font-semibold text-sm uppercase tracking-wider">
-                    <span>🎧 HEADPHONES & AUDIO</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>Wireless Over-Ear Headphones with 40H Battery & ANC</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>True Wireless Earbuds (IPX7, Low Latency Gaming Mode)</span>
-                </div>
-
-                {/* Mobile & Tablet Section */}
-                <div className="col-span-1 sm:col-span-2 mb-1 mt-2">
-                  <div className="flex items-center gap-2 text-[#00C6FF] font-semibold text-sm uppercase tracking-wider">
-                    <span>📱 MOBILE & TABLET</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>MagSafe Power Bank (20W PD, 10000mAh) + Fast Charging Adapter</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>Stylus Pen (Palm Rejection, 4096 Pressure Levels) for Tablet</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>Folio Case + Tempered Glass + Keyboard Cover</span>
-                </div>
-
-                {/* Gaming Section */}
-                <div className="col-span-1 sm:col-span-2 mb-1 mt-2">
-                  <div className="flex items-center gap-2 text-[#00C6FF] font-semibold text-sm uppercase tracking-wider">
-                    <span>🎮 GAMING ACCESSORIES</span>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>Mechanical RGB Gaming Keyboard (Hot-Swappable, Red/Brown/Blue Switches)</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>High-DPI Gaming Mouse (26K Sensor, 8 Programmable Buttons)</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-slate-600 dark:text-gray-400">
-                  <span className="text-[#00C6FF] mt-0.5">✓</span>
-                  <span>Controller Grip, Charging Dock, and Cooling Fan for Mobile Gaming</span>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-
-
-
-
-
-
+     
+        
         {/* ── HOW IT WORKS ────────────────────────────────── */}
         <section className="pt-[6vh] md:pt-[10vh] pb-[6vh] md:pb-[10vh] relative bg-transparent">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0072FF]/5 rounded-full blur-[100px] pointer-events-none" />

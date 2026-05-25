@@ -16,6 +16,22 @@
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
 }
+.antialiased{
+  margin-top: 75px
+}
+.home-text{
+  margin-left: 30px;
+}
+
+
+@media (max-width: 768px) {
+  .antialiased{
+  margin-top: 0px
+}
+.home-text{
+  margin-left: 0px;
+}
+}
 
 @tailwind base;
 @tailwind components;

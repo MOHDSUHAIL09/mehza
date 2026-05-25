@@ -157,10 +157,10 @@ const Footer = () => {
                   <MdEmail className="text-[#ffff] text-base md:text-lg flex-shrink-0" />
                   <a href="mailto:Sabahayat@Mehzasmarttech.com" className="text-gray-500 hover:text-[#00C6FF] transition-colors duration-300 text-xs md:text-sm font-body break-all">Sabahayat@Mehzasmarttech.com</a>
                 </li>
-                {/* <li className="flex gap-2 md:gap-3 items-center">
+                <li className="flex gap-2 md:gap-3 items-center">
                   <MdPhone className="text-[#ffff] text-base md:text-lg flex-shrink-0" />
-                  <a href="tel:12069069671" className="text-gray-500 hover:text-[#00C6FF] transition-colors duration-300 text-xs md:text-sm font-body">+91 12069069671</a>
-                </li> */}
+                  <a href="tel:012069069671" className="text-gray-500 hover:text-[#00C6FF] transition-colors duration-300 text-xs md:text-sm font-body">+91 12069069671</a>
+                </li>
               </ul>
             </div>
           </div>
