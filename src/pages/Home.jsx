@@ -985,7 +985,7 @@ const Home = () => {
         </section>
 
         {/* Accessories */}
-        <section className="relative min-h-screen md:min-h-[100svh] flex items-center justify-center pt-20 md:pt-[1vh] z-10 px-4 md:px-8">
+        <section className="relative min-h-screen md:min-h-[100svh] flex items-center justify-center  md:pt-[1vh] z-10 px-4 md:px-8">
           <div className="container mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center z-10">
             <AnimatedSection direction="right" className="relative mt-8 md:mt-0">
               <div className="relative group">
