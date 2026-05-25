@@ -33,7 +33,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 font-body text-sm leading-relaxed">
-              Innovating at the intersection of technology and hygiene to create a smarter, safer, and more sustainable future for all.
+              We provide advanced Interactive Smart Boards and Smart Hygiene Solutions designed for schools colleges, coaching institutes, and organizations
             </p>
 
             <div className="flex gap-5">
@@ -155,7 +155,7 @@ const Footer = () => {
                 </li>
                 <li className="flex gap-2 md:gap-3 items-center">
                   <MdEmail className="text-[#ffff] text-base md:text-lg flex-shrink-0" />
-                  <a href="mailto:Sabahayat@Mehzasmarttech.com" className="text-gray-500 hover:text-[#00C6FF] transition-colors duration-300 text-xs md:text-sm font-body break-all">Sabahayat@Mehzasmarttech.com</a>
+                  <a href="mailto:Sabahayat@Mehzasmarttech.com" className="text-gray-500 hover:text-[#00C6FF] transition-colors duration-300 text-xs md:text-sm font-body break-all">Info@mehzasmarttech.com</a>
                 </li>
                 <li className="flex gap-2 md:gap-3 items-center">
                   <MdPhone className="text-[#ffff] text-base md:text-lg flex-shrink-0" />

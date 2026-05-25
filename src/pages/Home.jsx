@@ -88,24 +88,24 @@ const Home = () => {
     {
       id: 1,
       title: <>Where <span style={{ color: '#00C6FF' }}>Technology</span> Meets <span style={{ color: '#8E2DE2' }}><br/> Empathy.</span></>,
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
+      desc: "At Mehza, we believe technology should empower people, improve education, and support better hygiene solutions.",
       // image: "/logo2.png",
     },
     {
       id: 2,
       title: <>Transforming  <span style={{ color: '#00C6FF' }}>Education </span><br /> & <span style={{ color: '#8E2DE2' }}> Hygiene.</span></>,
       // image: "/assets/slider/slider-2.jpeg",
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
+      desc: "At Mehza, we combine innovation, education, and care to create intelligent technology solutions for schools, colleges, offices, and institutions.",
     },
     {
       id: 3,
-      title: <>Smart <span style={{ color: '#00C6FF' }}>IoT</span> Solutions <br /> for <span style={{ color: '#8E2DE2' }}>Hygiene.</span></>,
-      desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
+      title: <>Sanitary <span style={{ color: '#00C6FF' }}>IoT</span> Pad  Vending <br /><span style={{ color: '#8E2DE2' }}>Machines.</span></>,
+      desc: "A Sanitary Pad Vending Machine is an automated machine designed to provide easy, quick, and hygienic access to sanitary pads in schools, colleges, offices, hospitals, and public places",
       // image: "/assets/slider/slider-2.jpeg",
     },
     {
       id: 4,
-      title: <>Smart Learning<span style={{ color: '#00C6FF' }}>Safe</span> Solutions<br /> for <span style={{ color: '#8E2DE2' }}>Future.</span></>,
+      title: <>Smart Learning<span style={{ color: '#00C6FF' }}> Safe </span> Solutions <br /> for <span style={{ color: '#8E2DE2' }}>Future.</span></>,
       desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
       // image: "/assets/slider/slider-2.jpeg",
     }
@@ -158,14 +158,11 @@ const Home = () => {
     />
     {/* Mobile Image - hidden on desktop */}
     <img
-      src="/assets/slider/slider-3.png"
-      className="w-full h-full object-cover block md:hidden"
+      src="/assets/slider/slider-3.jpg"
+      className="block md:hidden"style={{marginTop: "20px"}}
       alt="Hero Background Mobile"
     />
   </div>
-
-  {/* Optional: Dark overlay for better text readability */}
-  <div className="absolute inset-0 z-[1] bg-black/30 md:bg-black/20"></div>
 
   {/* Content container - full height flex column */}
   <div className="relative z-10 w-full h-full flex flex-col justify-center">
@@ -190,18 +187,18 @@ const Home = () => {
 
         {/* Mobile description font size fixed */}
         <motion.p
-          className="font-medium max-w-2xl leading-relaxed mb-8 md:mb-10"
+          className="font-medium max-w-2xl leading-relaxed "
           style={{
             color: "#ffffff",
-            fontSize: 'clamp(14px, 4vw, 20px)',
-            opacity: 0.95
+            fontSize: 'clamp(18px, 4vw, 30px)',
+            fontWidth: "bold"
           }}
         >
           {slides[current].desc}
         </motion.p>
 
         {/* Mobile buttons responsive - left aligned */}
-        <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4">
+        <div className="flex flex-wrap items-center justify-start gap-3 sm:gap-4 mt-5">
           <Link
             to="/solutions"
             className="px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full text-white font-bold text-xs sm:text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg"
@@ -279,8 +276,8 @@ const Home = () => {
       <section style={{ paddingBottom: '3rem' }}>
         <div
           style={{
-            paddingTop: '5vh',
-            paddingBottom: '8vh',
+            paddingTop: '4vh',
+            paddingBottom: '3vh',
             textAlign: 'center'
           }}
         >
@@ -780,16 +777,16 @@ const Home = () => {
       <div className="w-full relative overflow-hidden ">
 
         {/* Interactive Flat Panel Display */}
-        <section className="relative min-h-screen md:min-h-[100svh] flex items-center justify-center pt-20 md:pt-[1vh] z-10 px-4 md:px-8">
+        <section className="relative min-h-screen md:min-h-[100svh] flex items-center justify-center z-10 px-4 md:px-8">
           <div className="container mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center z-10">
             <AnimatedSection direction="right" className="relative mt-8 md:mt-0">
               <div className="relative group">
-                <div className="absolute -inset-10 bg-tech-gradient opacity-10 blur-[60px] md:blur-[100px] group-hover:opacity-20 transition-opacity duration-1000"></div>
+                
                 {/* 🔴 Clean soft image shadow wrapper for light canvas surfaces */}
                 <img
                   src={IntImg}
                   alt="Mehza Interactive Panel in Classroom"
-                  className="relative z-10 w-full h-auto max-w-[300px] md:max-w-none mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-float"
+                  className="relative z-10 w-full h-auto  md:max-w-none mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-float"
                 />
               </div>
             </AnimatedSection>
@@ -994,7 +991,7 @@ const Home = () => {
                 <img
                   src={product}
                   alt="Product Image"
-                  className="relative z-10 w-full h-auto max-w-[300px] md:max-w-none mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-float"
+                  className="relative z-10 w-full h-auto  md:max-w-none mx-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-float"
                 />
               </div>
             </AnimatedSection>
@@ -1092,11 +1089,11 @@ const Home = () => {
 
 
         {/* ── HOW IT WORKS ────────────────────────────────── */}
-        <section className="pt-[6vh] md:pt-[10vh] pb-[6vh] md:pb-[10vh] relative bg-transparent">
+        <section className=" relative bg-transparent">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0072FF]/5 rounded-full blur-[100px] pointer-events-none" />
           <div className="w-[90%] max-w-screen-xl mx-auto relative z-10">
-            <AnimatedSection direction="up" className="text-center mb-16" disabled={isMobile}>
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#0072FF] mb-4 block">Process</span>
+            <AnimatedSection direction="up" className="text-center mb-10" disabled={isMobile}>
+              <span className="text-xs font-bold tracking-[0.25em] uppercase text-[#0072FF] block">Process</span>
               <h2 className="font-black font-headline text-slate-800 dark:text-white tracking-tighter" style={{ fontSize: 'clamp(1.8rem, 4vw, 3.5rem)' }}>
                 Up & Running in <span className="text-[#0072FF]">3 Steps</span>
               </h2>
