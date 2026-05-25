@@ -165,10 +165,10 @@ const Home = () => {
   </div>
 
   {/* Black Shadow/Overlay for dark/sad effect */}
-  <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/40 via-black/30 to-black/10" />
+  <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/10 via-black/10 to-black/10" />
   
   {/* Additional Dark Overlay for better text readability */}
-  <div className="absolute inset-0 z-[1] bg-black/30" />
+  <div className="absolute inset-0 z-[1] bg-black/15" />
 
   {/* Content container - full height flex column */}
   <div className="relative z-10 w-full h-full flex flex-col justify-center">
@@ -196,7 +196,7 @@ const Home = () => {
           className="font-medium max-w-2xl leading-relaxed "
           style={{
             color: "#ffffff",
-            fontSize: 'clamp(18px, 4vw, 30px)',
+            fontSize: "15px",
             fontWidth: "bold"
           }}
         >
