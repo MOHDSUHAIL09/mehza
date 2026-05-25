@@ -159,10 +159,16 @@ const Home = () => {
     {/* Mobile Image - hidden on desktop */}
     <img
       src="/assets/slider/slider-3.jpg"
-      className="block md:hidden"style={{marginTop: "20px"}}
+      className="block md:hidden" style={{ marginTop: "20px" }}
       alt="Hero Background Mobile"
     />
   </div>
+
+  {/* Black Shadow/Overlay for dark/sad effect */}
+  <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/40 via-black/30 to-black/10" />
+  
+  {/* Additional Dark Overlay for better text readability */}
+  <div className="absolute inset-0 z-[1] bg-black/30" />
 
   {/* Content container - full height flex column */}
   <div className="relative z-10 w-full h-full flex flex-col justify-center">
