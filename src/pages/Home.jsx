@@ -99,7 +99,7 @@ const Home = () => {
     },
     {
       id: 3,
-      title: <>Sanitary <span style={{ color: '#00C6FF' }}>IoT</span> Pad  Vending <br /><span style={{ color: '#8E2DE2' }}>Machines.</span></>,
+      title: <>Sanitary <span style={{ color: '#00C6FF' }}></span> Pad  Vending <br /><span style={{ color: '#8E2DE2' }}>Machines.</span></>,
       desc: "A Sanitary Pad Vending Machine is an automated machine designed to provide easy, quick, and hygienic access to sanitary pads in schools, colleges, offices, hospitals, and public places",
       // image: "/assets/slider/slider-2.jpeg",
     },
