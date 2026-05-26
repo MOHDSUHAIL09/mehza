@@ -128,7 +128,7 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
-          <span className="material-symbols-outlined text-3xl">
+          <span className="material-symbols-outlined text-3xl" style={{color: "#00C6FF"}}>
             {isMobileMenuOpen ? 'close' : 'menu'}
           </span>
         </button>

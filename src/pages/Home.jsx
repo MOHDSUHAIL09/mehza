@@ -87,24 +87,18 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      title: <>Where <span style={{ color: '#00C6FF' }}>Technology</span> Meets <span style={{ color: '#8E2DE2' }}><br/> Empathy.</span></>,
-      desc: "At Mehza, we believe technology should empower people, improve education, and support better hygiene solutions.",
-      // image: "/logo2.png",
-    },
-    {
-      id: 2,
       title: <>Transforming  <span style={{ color: '#00C6FF' }}>Education </span><br /> & <span style={{ color: '#8E2DE2' }}> Hygiene.</span></>,
       // image: "/assets/slider/slider-2.jpeg",
       desc: "At Mehza, we combine innovation, education, and care to create intelligent technology solutions for schools, colleges, offices, and institutions.",
     },
     {
-      id: 3,
+      id: 2,
       title: <>Sanitary <span style={{ color: '#00C6FF' }}></span> Pad  Vending <br /><span style={{ color: '#8E2DE2' }}>Machines.</span></>,
       desc: "A Sanitary Pad Vending Machine is an automated machine designed to provide easy, quick, and hygienic access to sanitary pads in schools, colleges, offices, hospitals, and public places",
       // image: "/assets/slider/slider-2.jpeg",
     },
     {
-      id: 4,
+      id: 3,
       title: <>Smart Learning<span style={{ color: '#00C6FF' }}> Safe </span> <br /> <span style={{ color: '#8E2DE2' }}>Future.</span></>,
       desc: "Transforming Education & Hygiene With Smart Technology Interactive Smart Boards | Digital Learning Solutions | Sanitary Pad Vending Machines",
       // image: "/assets/slider/slider-2.jpeg",
@@ -184,7 +178,7 @@ const Home = () => {
         style={{ marginTop: "0" }}
       >
         {/* Add mobile-specific margin-top */}
-        <div className="md:mt-0" style={{ marginTop: "clamp(50px, 15vh, 0px)" }}>
+        <div className="md:mt-0" style={{ marginTop: "clamp(20px, 15vh, 0px)" }}>
           {/* Fully responsive heading */}
           <motion.h1
             className="font-headline font-black leading-[1.2] tracking-tighter text-white mb-3 sm:mb-4 md:mb-6"
