@@ -297,7 +297,7 @@ const Home = () => {
               fontWeight: '700'
             }}
           >
-            Our Products
+            Our <span style={{ color: '#00C6FF' }}> Products </span>
           </div>
         </div>
 
