@@ -58,13 +58,6 @@ const inputClass = (field) => `
   ${errors[field] ? 'border-red-400 dark:border-red-400/80 focus:border-red-400' : ''}
 `;
 
-  // const inputClass = (field) =>
-  //   `w-full rounded-xl border px-5 py-4 bg-white/[0.05] backdrop-blur-md border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 transition-all duration-300 ${
-  //     errors[field] ? 'border-red-500/50 text-red-200' : ''
-  //   }`;
-
-  // const labelClass = `block text-sm font-semibold mb-2 text-white/70 ml-1`;
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5 relative z-10">
     <input type="hidden" {...register('formType')} value={formType} />
@@ -72,12 +65,12 @@ const inputClass = (field) => `
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <div>
         <label htmlFor="name" className={labelClass}>Full Name <span className="text-red-500 dark:text-red-400">*</span></label>
-        <input id="name" type="text" placeholder="John Smith" className={inputClass('name')} {...register('name')} />
+        <input id="name" type="text" placeholder="Enter your full name" className={inputClass('name')} {...register('name')} />
         {errors.name && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400 transition-colors duration-500">{errors.name.message}</p>}
       </div>
       <div>
         <label htmlFor="email" className={labelClass}>Email Address <span className="text-red-500 dark:text-red-400">*</span></label>
-        <input id="email" type="email" placeholder="john@company.com" className={inputClass('email')} {...register('email')} />
+        <input id="email" type="email" placeholder="Enter your email address" className={inputClass('email')} {...register('email')} />
         {errors.email && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400 transition-colors duration-500">{errors.email.message}</p>}
       </div>
     </div>
@@ -85,18 +78,18 @@ const inputClass = (field) => `
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <div>
         <label htmlFor="phone" className={labelClass}>Phone Number</label>
-        <input id="phone" type="tel" placeholder="+91 98765 43210" className={inputClass('phone')} {...register('phone')} />
+        <input id="phone" type="tel" placeholder="Enter your phone number" className={inputClass('phone')} {...register('phone')} />
         {errors.phone && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400 transition-colors duration-500">{errors.phone.message}</p>}
       </div>
       <div>
         <label htmlFor="organization" className={labelClass}>Organization</label>
-        <input id="organization" type="text" placeholder="Your School / Company" className={inputClass('organization')} {...register('organization')} />
+        <input id="organization" type="text" placeholder="Enter your organization name" className={inputClass('organization')} {...register('organization')} />
       </div>
     </div>
 
     <div>
       <label htmlFor="subject" className={labelClass}>Subject <span className="text-red-500 dark:text-red-400">*</span></label>
-      <input id="subject" type="text" placeholder="What would you like to discuss?" className={inputClass('subject')} {...register('subject')} />
+      <input id="subject" type="text" placeholder="Enter message subject" className={inputClass('subject')} {...register('subject')} />
       {errors.subject && <p className="mt-1.5 text-xs text-red-500 dark:text-red-400 transition-colors duration-500">{errors.subject.message}</p>}
     </div>
 
@@ -105,7 +98,7 @@ const inputClass = (field) => `
       <textarea
         id="message"
         rows={5}
-        placeholder="Tell us about your requirements..."
+        placeholder="Tell us about your requirements or questions..."
         className={`${inputClass('message')} resize-none`}
         {...register('message')}
       />
@@ -113,7 +106,6 @@ const inputClass = (field) => `
     </div>
 
     <AnimatePresence mode="wait">
-      {/* 🔴 Success Alert Layout Box handles background colors adaptively */}
       {submitStatus === 'success' && (
         <motion.div
           key="success"
@@ -122,12 +114,11 @@ const inputClass = (field) => `
           exit={{ opacity: 0 }}
           className="flex items-center gap-3 p-4 rounded-xl bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800/40 text-green-700 dark:text-green-400 text-sm transition-colors duration-500"
         >
-          <span className="text-lg">className</span>
+          <span className="text-lg">✓</span>
           <span>Thank you! Your inquiry has been sent. We'll get back to you within 24 hours.</span>
         </motion.div>
       )}
       
-      {/* 🔴 Error Alert Layout Box handles background colors adaptively */}
       {submitStatus === 'error' && (
         <motion.div
           key="error"

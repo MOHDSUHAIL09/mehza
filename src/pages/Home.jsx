@@ -140,33 +140,33 @@ const Home = () => {
 
 
 
-      {/* ──New HERO SECTION ───────────────────────────────────────── */}
-<section className="relative w-full overflow-hidden flex items-center justify-center mt-2" style={{ height: '100dvh' }}>
+{/* ──New HERO SECTION ───────────────────────────────────────── */}
+<section className="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center md:justify-start mt-2">
   {/* Static Background Image - No animation */}
   <div className="absolute inset-0 z-0">
     {/* Desktop Image - hidden on mobile */}
     <img
-      src="/assets/slider/slider-2.png"
+      src="/assets/slider/home-1.png"
       className="w-full h-full object-cover hidden md:block"
       alt="Hero Background Desktop"
     />
     {/* Mobile Image - hidden on desktop */}
     <img
-      src="/assets/slider/slider-3.jpg"
-      className="block md:hidden w-full  object-cover"
-      style={{ marginTop: "40px", objectFit: "cover" }}
+      src="/assets/slider/home-2.png"
+      className="w-full h-full object-cover block md:hidden"
       alt="Hero Background Mobile"
+      style={{marginTop: "40px"}}
     />
   </div>
 
   {/* Black Shadow/Overlay for dark/sad effect */}
-  <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/10 via-black/10 to-black/5" />
+  <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/40 via-black/20 to-black/10" />
   
   {/* Additional Dark Overlay for better text readability */}
-  <div className="absolute inset-0 z-[1] bg-black/5" />
+  <div className="absolute inset-0 z-[1] bg-black/10" />
 
-  {/* Content container - full height flex column */}
-  <div className="relative z-10 w-full h-full flex flex-col justify-center">
+  {/* Content container */}
+  <div className="container mx-auto px-6 md:px-[10%] relative z-10">
     <AnimatePresence mode="wait">
       <motion.div
         key={current}
@@ -174,107 +174,102 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -40 }}
         transition={{ duration: 0.8 }}
-        className="home-text w-full text-left px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mb-5 md:mb-0"
-        style={{ marginTop: "0" }}
+        className="max-w-4xl md:ml-0"
       >
-        {/* Add mobile-specific margin-top */}
-        <div className="md:mt-0" style={{ marginTop: "clamp(20px, 15vh, 0px)" }}>
-          {/* Fully responsive heading */}
-          <motion.h1
-            className="font-headline font-black leading-[1.2] tracking-tighter text-white mb-3 sm:mb-4 md:mb-6"
+        <motion.h1
+          className="font-headline font-black leading-[1.05] tracking-tighter text-white text-[10vw] sm:text-6xl md:text-[5vw] mb-6 text-left"
             style={{
-              fontSize: 'clamp(24px, 6vw, 4rem)',
-            }}
-          >
-            {slides[current].title}
-          </motion.h1>
+    fontWeight: '700',marginTop: "50px"
+  }}
+        >
+          {slides[current].title}
+        </motion.h1>
 
-          {/* Fully responsive description */}
-          <motion.p
-            className="font-medium max-w-2xl leading-relaxed text-white/90"
-            style={{
-              fontSize: 'clamp(14px, 3.5vw, 1.25rem)',
-            }}
-          >
-            {slides[current].desc}
-          </motion.p>
+<motion.p
+  className="text-white font-bold max-w-2xl leading-relaxed text-base md:text-xl mb-10 text-balance text-left"
+  style={{
+    fontWeight: '700'
+  }}
+>
+  {slides[current].desc}
+</motion.p>
 
-          {/* Fully responsive buttons */}
-          <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-5 md:mt-6">
-            <Link
-              to="/solutions"
-              className="px-4 sm:px-5 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 rounded-full text-white font-bold text-xs sm:text-sm md:text-base tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg"
-            >
-              Explore Solutions
-            </Link>
-            <Link
-              to="/contact"
-              className="px-4 sm:px-5 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 rounded-full border-2 border-white/20 text-white font-bold text-xs sm:text-sm md:text-base tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md"
-            >
-              Contact Us
-            </Link>
-          </div>
+        <div className="flex flex-wrap items-center gap-4 justify-start">
+          <Link
+            to="/solutions"
+            className="px-8 py-4 rounded-full text-white font-bold text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg"
+          >
+            Explore Solutions
+          </Link>
+          <Link
+            to="/contact"
+            className="px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-sm tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md"
+          >
+            Contact Us
+          </Link>
         </div>
       </motion.div>
     </AnimatePresence>
   </div>
 
-  {/* Navigation Buttons - Fully responsive */}
-  <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-auto md:right-6 lg:right-8 xl:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-2 sm:gap-3 md:gap-4 z-40">
+  {/* Navigation Buttons */}
+  <div className="absolute bottom-12 md:bottom-auto md:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-4 z-40">
     <button
       onClick={prevSlide}
-      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
+      className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
     >
-      <ChevronLeft size={16} className="sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
+      <ChevronLeft size={24} />
     </button>
     <button
       onClick={nextSlide}
-      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
+      className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
     >
-      <ChevronRight size={16} className="sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
+      <ChevronRight size={24} />
     </button>
   </div>
 
-  {/* Dots Indicator - Fully responsive */}
-  <div className="absolute left-2 sm:left-3 md:left-4 lg:left-6 xl:left-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-2 sm:gap-3 md:gap-4 z-40">
+  {/* Dots Indicator */}
+  <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-4 z-40">
     {slides.map((_, i) => (
       <div
         key={i}
         onClick={() => setCurrent(i)}
-        className={`transition-all duration-700 rounded-full cursor-pointer ${
-          current === i
-            ? 'h-6 sm:h-8 md:h-10 lg:h-12 w-0.5 sm:w-1 bg-[#00C6FF]'
-            : 'h-2 sm:h-3 md:h-4 w-0.5 sm:w-1 bg-white/30'
+        className={`w-1 transition-all duration-700 rounded-full cursor-pointer ${
+          current === i ? 'h-12 bg-[#00C6FF]' : 'h-4 bg-white/30'
         }`}
       />
     ))}
   </div>
 
-  {/* Scroll Indicator - Fully responsive */}
+  {/* Scroll Indicator */}
   <div
-    className="peer absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-5 left-1/2 -translate-x-1/2 w-[80px] sm:w-[100px] md:w-[120px] lg:w-[140px] xl:w-[160px] h-[40px] sm:h-[45px] md:h-[50px] lg:h-[55px] xl:h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
+    className="peer absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 w-[140px] md:w-[200px] h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
     onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
   >
-    <span className="text-[6px] sm:text-[7px] md:text-[8px] lg:text-[9px] xl:text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-0.5 transition-transform duration-500 group-hover:-translate-y-1">
+    <span className="text-[8px] md:text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-0.5 md:mb-1 transition-transform duration-500 group-hover:-translate-y-1">
       Scroll
     </span>
-    <span className="material-symbols-outlined text-[#0072FF] text-xs sm:text-sm md:text-base lg:text-lg xl:text-[22px] transition-transform duration-500 group-hover:translate-y-1">
+    <span className="material-symbols-outlined text-[#0072FF] text-[16px] md:text-[22px] transition-transform duration-500 group-hover:translate-y-1">
       arrow_downward
     </span>
   </div>
 
-  {/* Bottom Curve - Fully responsive */}
+  {/* Bottom Curve */}
   <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none origin-bottom transition-transform duration-500 md:peer-hover:scale-y-[1.15]">
     {/* Mobile version */}
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[30px] sm:h-[40px] md:h-[50px]">
-      <path d="M 0,0 C 200,80 400,90 600,90 C 800,90 1000,80 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[80px]">
+      <path d="M 0,0 C 100,100 300,105 400,105 C 450,105 500,40 600,40 C 700,40 750,105 800,105 C 900,105 1100,100 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
     </svg>
     {/* Desktop version */}
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[60px] lg:h-[80px] xl:h-[100px] 2xl:h-[120px]">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[120px]">
       <path d="M 0,5 C 200,120 400,110 500,110 C 550,110 550,40 600,40 C 650,40 650,110 700,110 C 800,110 1000,120 1200,5 L 1200,120 L 0,120 Z" fill="#ffffff" />
     </svg>
   </div>
 </section>
+
+
+
+
       {/* Our products */}
       <section style={{ paddingBottom: '3rem' }}>
         <div
