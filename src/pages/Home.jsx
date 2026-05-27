@@ -87,7 +87,7 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      title: <>Transforming  <span style={{ color: '#00C6FF' }}>Education </span><br /> & <span style={{ color: '#8E2DE2' }}> Hygiene.</span></>,
+      title: <>Transforming  <span style={{ color: '#00C6FF' }}>Education </span> & <span style={{ color: '#8E2DE2' }}> Hygiene.</span></>,
       // image: "/assets/slider/slider-2.jpeg",
       desc: "At Mehza, we combine innovation, education, and care to create intelligent technology solutions for schools, colleges, offices, and institutions.",
     },
@@ -104,7 +104,7 @@ const Home = () => {
       // image: "/assets/slider/slider-2.jpeg",
     }
   ];
-  
+
 
   // Products list for icon section
   const productsList = [
@@ -140,132 +140,126 @@ const Home = () => {
 
 
 
-{/* ──New HERO SECTION ───────────────────────────────────────── */}
-<section className="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center md:justify-start mt-2">
-  {/* Static Background Image - No animation */}
-  <div className="absolute inset-0 z-0">
-    {/* Desktop Image - hidden on mobile */}
-    <img
-      src="/assets/slider/home-1.png"
-      className="w-full h-full object-cover hidden md:block"
-      alt="Hero Background Desktop"
-    />
-    {/* Mobile Image - hidden on desktop */}
-    <img
-      src="/assets/slider/home-2.png"
-      className="w-full h-full object-cover block md:hidden"
-      alt="Hero Background Mobile"
-      style={{marginTop: "40px"}}
-    />
-  </div>
-
-  {/* Black Shadow/Overlay for dark/sad effect */}
-  <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/40 via-black/20 to-black/10" />
-  
-  {/* Additional Dark Overlay for better text readability */}
-  <div className="absolute inset-0 z-[1] bg-black/10" />
-
-  {/* Content container */}
-  <div className="container mx-auto px-6 md:px-[10%] relative z-10">
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={current}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -40 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl md:ml-0"
-      >
-        <motion.h1
-          className="font-headline font-black leading-[1.05] tracking-tighter text-white text-[10vw] sm:text-6xl md:text-[5vw] mb-6 text-left"
-            style={{
-    fontWeight: '700',marginTop: "50px"
-  }}
-        >
-          {slides[current].title}
-        </motion.h1>
-
-<motion.p
-  className="text-white font-bold max-w-2xl leading-relaxed text-base md:text-xl mb-10 text-balance text-left"
-  style={{
-    fontWeight: '700'
-  }}
->
-  {slides[current].desc}
-</motion.p>
-
-        <div className="flex flex-wrap items-center gap-4 justify-start">
-          <Link
-            to="/solutions"
-            className="px-8 py-4 rounded-full text-white font-bold text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg"
-          >
-            Explore Solutions
-          </Link>
-          <Link
-            to="/contact"
-            className="px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-sm tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md"
-          >
-            Contact Us
-          </Link>
+      {/* ──New HERO SECTION ───────────────────────────────────────── */}
+      <section className="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center md:justify-start mt-2">
+        {/* Static Background Image - No animation */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop Image - hidden on mobile */}
+          <img
+            src="/assets/slider/home-1.png"
+            className="w-full h-full object-cover hidden md:block"
+            alt="Hero Background Desktop"
+          />
+          {/* Mobile Image - hidden on desktop */}
+          <img
+            src="/assets/slider/home-2.png"
+            className="w-full h-full object-cover block md:hidden"
+            alt="Hero Background Mobile"
+            style={{ marginTop: "40px" }}
+          />
         </div>
-      </motion.div>
-    </AnimatePresence>
-  </div>
 
-  {/* Navigation Buttons */}
-  <div className="absolute bottom-12 md:bottom-auto md:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-4 z-40">
-    <button
-      onClick={prevSlide}
-      className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
+        {/* Black Shadow/Overlay for dark/sad effect */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/40 via-black/20 to-black/10" />
+
+        {/* Additional Dark Overlay for better text readability */}
+        <div className="absolute inset-0 z-[1] bg-black/10" />
+
+        {/* Content container */}
+<div className="container px-4 sm:px-6 md:px-8 lg:px-[10%] relative z-10 min-h-[70vh] sm:min-h-[80vh] md:min-h-screen flex items-center">
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={current}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -40 }}
+      transition={{ duration: 0.8 }}
+      className="w-full max-w-full md:max-w-4xl mx-auto md:mx-0"
     >
-      <ChevronLeft size={24} />
-    </button>
-    <button
-      onClick={nextSlide}
-      className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
-    >
-      <ChevronRight size={24} />
-    </button>
-  </div>
+      {/* Heading */}
+      <motion.h1
+        className="font-headline font-black leading-[1.1] sm:leading-[1.08] md:leading-[1.05] tracking-tighter text-white mb-4 sm:mb-6 md:mb-8 text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+        style={{ fontWeight: '700' }}
+      >
+        {slides[current].title}
+      </motion.h1>
 
-  {/* Dots Indicator */}
-  <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-4 z-40">
-    {slides.map((_, i) => (
-      <div
-        key={i}
-        onClick={() => setCurrent(i)}
-        className={`w-1 transition-all duration-700 rounded-full cursor-pointer ${
-          current === i ? 'h-12 bg-[#00C6FF]' : 'h-4 bg-white/30'
-        }`}
-      />
-    ))}
-  </div>
+      {/* Description */}
+      <motion.p
+        className="text-white font-bold max-w-2xl leading-relaxed text-balance text-left mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base md:text-lg lg:text-xl"
+        style={{ fontWeight: '700' }}
+      >
+        {slides[current].desc}
+      </motion.p>
 
-  {/* Scroll Indicator */}
-  <div
-    className="peer absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 w-[140px] md:w-[200px] h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
-    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-  >
-    <span className="text-[8px] md:text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-0.5 md:mb-1 transition-transform duration-500 group-hover:-translate-y-1">
-      Scroll
-    </span>
-    <span className="material-symbols-outlined text-[#0072FF] text-[16px] md:text-[22px] transition-transform duration-500 group-hover:translate-y-1">
-      arrow_downward
-    </span>
-  </div>
+      {/* Buttons - Centered on mobile, left aligned on desktop */}
+       <div className="flex flex-wrap items-center gap-3">
+                      <Link to="/solutions" className="px-8 py-4 rounded-full text-white font-bold text-sm tracking-widest shadow-2xl transition-all hover:scale-105 active:scale-95 flowing-gradient-bg">
+                        Explore Solutions
+                      </Link>
+                      <Link to="/contact" className="px-8 py-4 rounded-full border-2 border-white/20 text-white font-bold text-sm tracking-widest transition-all hover:bg-white/10 active:scale-95 backdrop-blur-md">
+                        Contact Us
+                      </Link>
+                    </div>
+    </motion.div>
+  </AnimatePresence>
+</div>
 
-  {/* Bottom Curve */}
-  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none origin-bottom transition-transform duration-500 md:peer-hover:scale-y-[1.15]">
-    {/* Mobile version */}
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[80px]">
-      <path d="M 0,0 C 100,100 300,105 400,105 C 450,105 500,40 600,40 C 700,40 750,105 800,105 C 900,105 1100,100 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
-    </svg>
-    {/* Desktop version */}
-    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[120px]">
-      <path d="M 0,5 C 200,120 400,110 500,110 C 550,110 550,40 600,40 C 650,40 650,110 700,110 C 800,110 1000,120 1200,5 L 1200,120 L 0,120 Z" fill="#ffffff" />
-    </svg>
-  </div>
-</section>
+
+
+        {/* Navigation Buttons */}
+        <div className="absolute bottom-12 md:bottom-auto md:right-12 md:top-1/2 md:-translate-y-1/2 flex md:flex-col gap-4 z-40">
+          <button
+            onClick={prevSlide}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#00C6FF] hover:border-transparent hover:scale-110 transition-all duration-300 backdrop-blur-md bg-black/20"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-4 z-40">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-1 transition-all duration-700 rounded-full cursor-pointer ${current === i ? 'h-12 bg-[#00C6FF]' : 'h-4 bg-white/30'
+                }`}
+            />
+          ))}
+        </div>
+
+        {/* Scroll Indicator */}
+        <div
+          className="peer absolute bottom-2 md:bottom-5 left-1/2 -translate-x-1/2 w-[140px] md:w-[200px] h-[60px] z-30 flex flex-col items-center justify-end cursor-pointer group"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <span className="text-[8px] md:text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-0.5 md:mb-1 transition-transform duration-500 group-hover:-translate-y-1">
+            Scroll
+          </span>
+          <span className="material-symbols-outlined text-[#0072FF] text-[16px] md:text-[22px] transition-transform duration-500 group-hover:translate-y-1">
+            arrow_downward
+          </span>
+        </div>
+
+        {/* Bottom Curve */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none origin-bottom transition-transform duration-500 md:peer-hover:scale-y-[1.15]">
+          {/* Mobile version */}
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block md:hidden w-full h-[80px]">
+            <path d="M 0,0 C 100,100 300,105 400,105 C 450,105 500,40 600,40 C 700,40 750,105 800,105 C 900,105 1100,100 1200,0 L 1200,120 L 0,120 Z" fill="#ffffff" />
+          </svg>
+          {/* Desktop version */}
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative hidden md:block w-full h-[120px]">
+            <path d="M 0,5 C 200,120 400,110 500,110 C 550,110 550,40 600,40 C 650,40 650,110 700,110 C 800,110 1000,120 1200,5 L 1200,120 L 0,120 Z" fill="#ffffff" />
+          </svg>
+        </div>
+      </section>
 
 
 
@@ -779,7 +773,7 @@ const Home = () => {
           <div className="container mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center z-10">
             <AnimatedSection direction="right" className="relative mt-8 md:mt-0">
               <div className="relative group">
-                
+
                 {/* 🔴 Clean soft image shadow wrapper for light canvas surfaces */}
                 <img
                   src={IntImg}
@@ -1079,12 +1073,6 @@ const Home = () => {
             </AnimatedSection>
           </div>
         </section>
-
-
-
-
-
-
 
         {/* ── HOW IT WORKS ────────────────────────────────── */}
         <section className=" relative bg-transparent">
