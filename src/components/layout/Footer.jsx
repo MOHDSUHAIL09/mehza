@@ -81,7 +81,7 @@ const Footer = () => {
 
               {/* Solutions */}
               <div className="flex flex-col gap-4">
-                <h3 className="text-white text-sm font-semibold tracking-wider pl-3">SOLUTIONS</h3>
+                <h3 className="text-white text-sm font-semibold tracking-wider ">SOLUTIONS</h3>
                 <ul className="flex flex-col gap-2.5">
                   <li><Link to="/solutions" className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300">All Solutions</Link></li>
                   <li><Link to="/sanitary-vending" className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300">Sanitary Vending</Link></li>
@@ -91,7 +91,7 @@ const Footer = () => {
 
               {/* Support */}
               <div className="flex flex-col gap-4">
-                <h3 className="text-white text-sm font-semibold tracking-wider pl-3">SUPPORT</h3>
+                <h3 className="text-white text-sm font-semibold tracking-wider">SUPPORT</h3>
                 <ul className="flex flex-col gap-2.5">
                   <li><Link to="/privacy-policy" className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300">Privacy Policy</Link></li>
                   <li><Link to="/terms-and-conditions" className="text-gray-400 hover:text-blue-400 text-sm transition-colors duration-300">Terms of Service</Link></li>
