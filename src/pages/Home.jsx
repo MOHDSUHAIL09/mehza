@@ -261,9 +261,6 @@ const Home = () => {
         </div>
       </section>
 
-
-
-
       {/* Our products */}
       <section style={{ paddingBottom: '3rem' }}>
         <div
