@@ -140,7 +140,7 @@ const Home = () => {
 
 
 
-      {/* ──New HERO SECTION ───────────────────────────────────────── */}
+      {/* ──────────────────────HERO SECTION ───────────────────────────────────────── */}
       <section className="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center md:justify-start mt-2">
         {/* Static Background Image - No animation */}
         <div className="absolute inset-0 z-0">
@@ -155,7 +155,7 @@ const Home = () => {
             src="/assets/slider/home-2.png"
             className="w-full h-full object-cover block md:hidden"
             alt="Hero Background Mobile"
-            style={{ marginTop: "40px" }}
+            style={{ marginTop: "800px" }}
           />
         </div>
 
